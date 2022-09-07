@@ -5,16 +5,19 @@ function App() {
 
   const [monState, setMonState] = useState(10);
 
-  const modifyState = () => {
-    setMonState(monState + 1);
+  /* Etape 3 : je prend le state de Item et je le set dans le state de App */
+  const modifyState = (data) => {
+    setMonState(data);
   }
 
   return (
     <div className="App">
       <h1>Hello state : {monState} </h1>
-    
-      <button onClick={modifyState}> Change state</button>
-      <Item number={monState}/>
+          {/* 
+            Etape 1 : Je passe la fonction de modif de state 
+            en props dans le composant fils 
+          */}
+          <Item func={modifyState}/>
     </div>
 
   );
