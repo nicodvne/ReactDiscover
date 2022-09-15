@@ -3,23 +3,25 @@ import Item from './Components/Item/Item';
 
 function App() {
 
-  const [inputData, setInputData] = useState();
+  const [toogle, setToogle] = useState(true);
 
-  const changeInput = (e) => {
-    setInputData(e);
+  const changeState = () => {
+    setToogle(!toogle);
   }
-   
-  return (
-    <div className="App">
-      <h1>Hello depuis App.js</h1>
-      <input 
-        type="text"
-        onInput={e => changeInput(e.target.value)}
-      >
-      </input>
-    </div>
 
-  );
+  let toogleContent;
+  toogleContent = toogle ? <h1>Le state est true</h1> : <h1>Le state est false</h1>
+
+    return (
+      <div className="App">
+        {toogleContent}
+        <button onClick={changeState}>Change State</button>
+      </div>
+  
+    );
+  
+   
+  
 }
 
 export default App;
