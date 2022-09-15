@@ -1,4 +1,5 @@
 .title-item {
     color: crimson;
     font-size: 50px;
+    background-image: url("../../assets/imgItem.jpg");
 }
